@@ -10,7 +10,7 @@ modal transformers, which inspire one modality to directly attend to latent rele
 
 ## Overview Architecture for Husformer
 <div align=center>
-<img src="/figures/architecture.png" width="800" />
+<img src="/figure/architecture.png" width="800" />
 </div>  
 
 

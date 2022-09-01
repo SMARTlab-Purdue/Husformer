@@ -20,7 +20,7 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 
 
 ## Main Experimental Results
-| Name | Modalities | Acc(%) | F1(%) | #Params | Memory |  Dataset |
+| Name | Modalities | Acc(%) | F1(%) | Model parameters | GPU Memory Usage|  Dataset |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | RAW-MOCAS | 5 | 93.71±2.26 | 93.82±2.41 | 0.74M | 210.97MB | [Raw-MOCAS](address)|
 | Preprocessed-MOCAS | 5 | 96.42±2.11 | 96.51±2.03 | 0.75M | 220.53MB | [Pre-MOCAS](address) |

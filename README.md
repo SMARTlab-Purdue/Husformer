@@ -38,27 +38,46 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 ### Prerequisites
 
 - Python 3.8
-- [Pytorch (1.8.2+cu111) and torchvision or above](https://pytorch.org/)
-- CUDA  11.1 or above
-- scikit-learn  1.0.2
-- numpy 1.19.5
+- [Pytorch (1.8.2+cu111) and torchvision](https://pytorch.org/)
+- CUDA 11.1 or above
+- Scikit-learn 1.0.2
+- Numpy 1.19.5
+
+(The code was tested in Ubuntu 18.04 with Python 3.8.)
 
 ### Datasets
+
 Downloading addresses of datasets including DEAP, WESAD, MOCAS and CogLoad can be found in the above table.
 
-#### Make data file as '.pkl'
-Husformer reads data from 'husformer.pkl' in [data/](data/) for training and testing.
-You should change the data file format from '.xxx' to '.pkl' before you start run the training or testing command.
-We provide Python files to change data file format in [make_data](make_data/), and name them as 'dataset's name.py', such as: [Pre-MOCAS.py](make_data/Pre-MOCAS.py) and [Raw-MOCAS.py](make_data/Raw-MOCAS.py).
+#### Convert the data file format to '.pkl'
+
+Husformer reads and loads data from 'Husformer.pkl' in [data/](data/) for training and testing.
+
+Before starting to run the training or testing commands, you should convert the data file format from '.xxx', e.g., '.csv', to '.pkl', and rename the data file as 'Husformer.pkl'.
+
+We provide Python code demos used for data format converting change in [make_data](make_data/), and name them as 'dataset's name.py', such as: [Pre-MOCAS.py](make_data/Pre-MOCAS.py) and [Raw-MOCAS.py](make_data/Raw-MOCAS.py).
+
 You should add the datasets file path to 'dataset_name_list.txt' after downloading datasets, and change the content as 'dataset_name_list.txt' in 'dataset_name.py'.
-For each dataset, we randomly shuffled all data and conducted the K-folder Cross Validation (K = 10). Thus you will get 10 '.pkl' files every time after you run the make_data code. 
+
+For each dataset, we randomly shuffled all data and conducted the K-folder Cross Validation (K = 10). Thus you will get 10 '.pkl' files every time after running the make_data code. 
+
+### Change the model file according to the number of modalities
+
+We provide 3 model files which are corresponding to task scenarios involving 3, 4, and 5 modalities. You can follow the provided demos to make new model files if you want to use more or fewer modalities with the Husformer.
+
+#### How to change the model files
+
+1. Move the target model files contained in folders, e.g., [src/3](src/3),[src/4](src/4) and [src/5](src/5), from 'src/x' to [src](src/).
+
+2. Rename the target 'main-x.py' in [src](src), e.g., [main-3.py](main-3.py), [main-4.py](main-4.py), [main-5.py](main-5.py), as 'main.py'.
 
 ### Run the code
-0. We provide [cogload.pkl](data/) in [data](data/). You should make data as follow, if you want to use other datasets.
+
+0. We provide Cconverted [cogload.pkl](data/) in [data](data/). You should make data as following if using other datasets.
 ```
 python make_data/dataset_name.py
 ```
-then put the prepared '.pkl' data in 'data/', and rename it as 'husformer.pkl'.
+Then put the made '.pkl' data file in 'data/', and rename it as 'Husformer.pkl'.
 
 1. Training command as follow. 
 ```
@@ -71,14 +90,10 @@ python main.py --eval
 ```
 
 
-(The code was tested in Ubuntu 18.04 with Python 3.8.)
-### Change model
-We provide 3 models in code to correspond to the 3 data number of modalities as 3,4,5. You should add or remove some modalities in code, if you want to use more or less modalities by Husformer.
-#### How change the model
-We name these files with their modalities. We put the general python files in [src](src), as the same time, the different modalities main python files are [main-3.py](main-3.py), [main-4.py](main-4.py), [main-5.py](main-5.py) and different modalities python files in folder [src/3](src/3),[src/4](src/4) and [src/5](src/5), you should rename the main python files as 'main.py' and move the python files from 'src/x' to [src](src/).
 
 
 ## Citation
+
 If you find the code or the paper useful for your research, please cite our paper:
 ```
 
@@ -90,7 +105,6 @@ Contributors:
 [Ruiqi Wang](https://github.com/R7-Robot); [Dezhong Zhao](https://github.com/zdz0086); [Wonse Jo](https://github.com/).
 
 Part of the code is based on the following repositories:  
-
 [Multimodal-Transformer](https://github.com/yaohungt/Multimodal-Transformer).
 
 

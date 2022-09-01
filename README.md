@@ -71,7 +71,7 @@ We provide 3 model files which are corresponding to task scenarios involving 3, 
 
 ### Run the code
 
-0. We provide Cconverted [cogload.pkl](data/) in [data](data/). You should make data as following if using other datasets.
+0. We provide converted [cogload.pkl](data/) in [data](data/). You should make data as following if using other datasets.
 ```
 python make_data/dataset_name.py
 ```

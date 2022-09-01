@@ -18,7 +18,8 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 <img src="/figures/CMAT.png" width="800" />
 </div>  
 
-## Main Results on Datasets with Download Address
+
+## Main Experimental Results
 | Name | Modalities | Acc(%) | F1(%) | #Params | Memory |  Dataset |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | RAW-MOCAS | 5 | 93.71±2.26 | 93.82±2.41 | 0.74M | 210.97MB | [Raw-MOCAS](address)|

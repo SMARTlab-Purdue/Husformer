@@ -6,13 +6,14 @@ For more details, please refer to [our paper](xxxx).
 ## Abstract
 Human state recognition is a critical topic due to its pervasive and crucial applications in human-machine systems, and multi-modal fusion that combines metrics from multiple data sources has been shown as a sound method to improve the recognition performance. In spite of the promising results of recent multi-modal-based models, they generally fail to leverage sophisticated fusion strategies that models sufficient cross-modal interactions to produce the fusion representation, and rely heavily on lengthy and inconsistent date preprocessing and feature crafting. To address these limitations, we propose an end-to-end multi-modal transformer framework for multi-modal human state recognition called Husformer. Specifically, we propose cross-modal transformers, which inspire one modality to directly attend to latent relevance revealed in other modalities to reinforce itself, to fuse different modalities with sufficient awareness of cross-modal interactions introduced. A self-attention transformer is then utilized to further prioritize the important contextual information of human state in the fusion representation. Additionally, such two attention mechanisms enable effective and adaptive adjustments to noise and interruptions in multi-modal signals during the fusion process and at high-level feature level respectively. Extensive experiments on two human emotion (DEAP and WESAD) corpus and two cognitive workload (MOCAS and CogLoad) datasets demonstrate that our Husformer outperform state-of-the-art multi-modal baselines and the performance with a single modality in the recognition of human state by a large margin, especially when dealing with raw multi-modal signals. An ablation study is also conducted to show the benefits of each component in the Husformer.
 
+## Overview
 
-## Overview Architecture for our Husformer
+# Overall Architecture of our Husformer
 <div align=center>
 <img src="/figures/architecture.png" width="800" />
 </div>  
 
-## Architectural description of (a) cross-modal attention and (b) cross-modal transformer network
+# Architectural description of (a) cross-modal attention and (b) cross-modal transformer network
 
 <div align=center>
 <img src="/figures/CMAT.png" width="800" />

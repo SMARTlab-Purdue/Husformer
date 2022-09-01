@@ -65,7 +65,7 @@ We provide 3 model files which are corresponding to task scenarios involving 3, 
 
 #### How to change the model files
 
-1. Move the target model files contained in folders, e.g., [src/3](src/3),[src/4](src/4) and [src/5](src/5), from 'src/x' to [src](src/).
+1. Move the target model files contained in folders, e.g., [src/3](src/3), [src/4](src/4) and [src/5](src/5), from 'src/x' to [src](src/).
 
 2. Rename the target 'main-x.py' in [src](src), e.g., [main-3.py](main-3.py), [main-4.py](main-4.py), [main-5.py](main-5.py), as 'main.py'.
 

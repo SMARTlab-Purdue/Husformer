@@ -8,12 +8,12 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 
 ## Overview
 
-# Overall Architecture of our Husformer
+### Overall Architecture of our Husformer
 <div align=center>
 <img src="/figures/architecture.png" width="800" />
 </div>  
 
-# Architectural description of (a) cross-modal attention and (b) cross-modal transformer network
+### Architectural description of (a) cross-modal attention and (b) cross-modal transformer network
 
 <div align=center>
 <img src="/figures/CMAT.png" width="800" />

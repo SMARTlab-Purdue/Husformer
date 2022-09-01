@@ -22,10 +22,10 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 ## Main Experimental Results
 | Name | Modalities | Acc(%) | F1(%) | Dataset |
 | :---: | :---: | :---: | :---: | :---: | 
-| RAW-MOCAS | 5 | 93.71±2.26 | 93.82±2.41 | [Raw-MOCAS](address)|
+| Raw-MOCAS | 5 | 93.71±2.26 | 93.82±2.41 | [Raw-MOCAS](address)|
 | Preprocessed-MOCAS | 5 | 96.42±2.11 | 96.51±2.03 | [Pre-MOCAS](address) |
-| RAW-DEAP(Valance) | 4 | 85.98±1.38 | 86.21±1.40 | [Raw-DEAP](address) |
-| RAW-DEAP(Arousal) | 4 | 86.28±2.04 | 86.78±2.11 | [Raw-DEAP](address) |
+| Raw-DEAP(Valance) | 4 | 85.98±1.38 | 86.21±1.40 | [Raw-DEAP](address) |
+| Raw-DEAP(Arousal) | 4 | 86.28±2.04 | 86.78±2.11 | [Raw-DEAP](address) |
 | Preprocessed-DEAP(Valance) | 4 | 97.01±2.06 | 97.08±2.15 |  [Pre-DEAP](address) |
 | Preprocessed-DEAP(Arousal) | 4 | 97.67±1.45 | 97.69±1.53 | [Pre-DEAP](address) |
 | WESAD | 4 | 85.02±1.91 | 85.85±2.14 |  [WESAD](address) |
@@ -33,8 +33,7 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 
 
 ## Usage
-### Requirements
-1. Install the required Python package and version
+### Prerequisites
 
 - Python 3.8
 - [Pytorch (1.8.2+cu111) and torchvision or above](https://pytorch.org/)
@@ -43,14 +42,14 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 - numpy 1.19.5
 
 ### Datasets
-Data files (containing processed MOCAS, DEAP,Cogload and WESAD datasets) can be downloaded from table above.
+Downloading addresses of datasets including DEAP, WESAD, MOCAS and CogLoad can be found in the above table.
 
 #### Make data file as '.pkl'
-Husformer read data from 'husformer.pkl' in [data/](data/).
-You should change data file format from '.xxx' to '.pkl', before you start run training or testing command.
-We provide Python files to change data file format in [make_data](make_data/), and name them as dataset's name,such as: [Pre-MOCAS.py](make_data/Pre-MOCAS.py) and [Raw-MOCAS.py](make_data/Raw-MOCAS.py).
-You should add the datasets file path to 'dataset_name_list.txt' after download datasets, and change the concant as 'dataset_name_list.txt' in 'dataset_name.py'.
-For each dataset, we randomly shuffled all data and conducted the K-folder Cross Validation (K = 10). So you will get 10 '.pkl' files every time after you run the code below. 
+Husformer reads data from 'husformer.pkl' in [data/](data/) for training and testing.
+You should change the data file format from '.xxx' to '.pkl' before you start run the training or testing command.
+We provide Python files to change data file format in [make_data](make_data/), and name them as 'dataset's name.py', such as: [Pre-MOCAS.py](make_data/Pre-MOCAS.py) and [Raw-MOCAS.py](make_data/Raw-MOCAS.py).
+You should add the datasets file path to 'dataset_name_list.txt' after downloading datasets, and change the content as 'dataset_name_list.txt' in 'dataset_name.py'.
+For each dataset, we randomly shuffled all data and conducted the K-folder Cross Validation (K = 10). Thus you will get 10 '.pkl' files every time after you run the make_data code. 
 
 ### Run the code
 0. We provide [cogload.pkl](data/) in [data](data/). You should make data as follow, if you want to use other datasets.

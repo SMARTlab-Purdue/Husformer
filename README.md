@@ -20,16 +20,16 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 
 
 ## Main Experimental Results
-| Name | Modalities | Acc(%) | F1(%) | Model parameters | GPU Memory Usage|  Dataset |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| RAW-MOCAS | 5 | 93.71±2.26 | 93.82±2.41 | 0.74M | 210.97MB | [Raw-MOCAS](address)|
-| Preprocessed-MOCAS | 5 | 96.42±2.11 | 96.51±2.03 | 0.75M | 220.53MB | [Pre-MOCAS](address) |
-| RAW-DEAP(Valance) | 4 | 85.98±1.38 | 86.21±1.40 | 0.63M | 1999.56MB | [Raw-DEAP](address) |
-| RAW-DEAP(Arousal) | 4 | 86.28±2.04 | 86.78±2.11 | 0.63M | 1999.56MB | [Raw-DEAP](address) |
-| Preprocessed-DEAP(Valance) | 4 | 97.01±2.06 | 97.08±2.15 | 0.66M |  1773.59MB | [Pre-DEAP](address) |
-| Preprocessed-DEAP(Arousal) | 4 | 97.67±1.45 | 97.69±1.53 | 0.66M |  1773.59MB | [Pre-DEAP](address) |
-| WESAD | 4 | 85.02±1.91 | 85.85±2.14 | 0.71M | 3084.35MB | [WESAD](address) |
-| Cogload | 4 | 80.40±2.34 | 81.27±2.63 | 0.72M | 94.28MB | [Cogload.pkl](data/)|
+| Name | Modalities | Acc(%) | F1(%) | Dataset |
+| :---: | :---: | :---: | :---: | :---: | 
+| RAW-MOCAS | 5 | 93.71±2.26 | 93.82±2.41 | [Raw-MOCAS](address)|
+| Preprocessed-MOCAS | 5 | 96.42±2.11 | 96.51±2.03 | [Pre-MOCAS](address) |
+| RAW-DEAP(Valance) | 4 | 85.98±1.38 | 86.21±1.40 | [Raw-DEAP](address) |
+| RAW-DEAP(Arousal) | 4 | 86.28±2.04 | 86.78±2.11 | [Raw-DEAP](address) |
+| Preprocessed-DEAP(Valance) | 4 | 97.01±2.06 | 97.08±2.15 |  [Pre-DEAP](address) |
+| Preprocessed-DEAP(Arousal) | 4 | 97.67±1.45 | 97.69±1.53 | [Pre-DEAP](address) |
+| WESAD | 4 | 85.02±1.91 | 85.85±2.14 |  [WESAD](address) |
+| Cogload | 4 | 80.40±2.34 | 81.27±2.63  | [Cogload.pkl](data/)|
 
 
 ## Usage

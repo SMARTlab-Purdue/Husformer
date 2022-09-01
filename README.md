@@ -55,7 +55,7 @@ Husformer reads and loads data from 'Husformer.pkl' in [data/](data/) for traini
 
 Before starting to run the training or testing commands, you should convert the data file format from '.xxx', e.g., '.csv', to '.pkl', and rename the data file as 'Husformer.pkl'.
 
-We provide Python code demos used for data format converting change in [make_data](make_data/), and name them as 'dataset's name.py', such as: [Pre-MOCAS.py](make_data/Pre-MOCAS.py) and [Raw-MOCAS.py](make_data/Raw-MOCAS.py).
+We provide Python code demos used for data format converting in [make_data](make_data/), and name them as 'dataset's name.py', such as: [Pre-MOCAS.py](make_data/Pre-MOCAS.py) and [Raw-MOCAS.py](make_data/Raw-MOCAS.py).
 
 You should add the datasets file path to 'dataset_name_list.txt' after downloading datasets, and change the content as 'dataset_name_list.txt' in 'dataset_name.py'.
 

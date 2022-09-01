@@ -34,6 +34,7 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 
 
 ## Usage
+
 ### Prerequisites
 
 - Python 3.8
@@ -86,7 +87,7 @@ If you find the code or the paper useful for your research, please cite our pape
 ## Acknowledgement
 
 Contributors:  
-[Ruiqi Wang](https://github.com/R7-Robot);[Dezhong Zhao](https://github.com/zdz0086).
+[Ruiqi Wang](https://github.com/R7-Robot); [Dezhong Zhao](https://github.com/zdz0086); [Wonse Jo](https://github.com/).
 
 Part of the code is based on the following repositories:  
 

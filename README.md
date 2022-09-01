@@ -12,7 +12,7 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 <img src="/figures/architecture.png" width="800" />
 </div>  
 
-## Illustration of the proposed cross-modal attention mechanism and cross-modal attention transformer network.
+## Architectural description of (a) cross-modal attention and (b) cross-modal transformer network
 
 <div align=center>
 <img src="/figures/CMAT.png" width="800" />

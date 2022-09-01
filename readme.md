@@ -13,9 +13,6 @@ modal transformers, which inspire one modality to directly attend to latent rele
 <img src="/figure/architecture.png" width="800" />
 </div>  
 
-<div align=left>
-<img src="/figure/CM.pdf" width="800" />
-</div>  
 ## Main Results on Datasets with Pretrained Models
 | name | modalities | acc(%) | f1(%) | #params | memory |  model | dataset |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |

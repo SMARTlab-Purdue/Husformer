@@ -13,7 +13,7 @@ modal transformers, which inspire one modality to directly attend to latent rele
 <img src="/figures/architecture.png" width="800" />
 </div>  
 
-## lustration of the transformer network and multi-head self-attention
+## Illustration of the transformer network and multi-head self-attention
 
 <div align=center>
 <img src="/figures/CMAT.png" width="800" />

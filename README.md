@@ -1,5 +1,5 @@
 # Husformer
-This repository contains the source code for our paper: "Husformer: A Multi-Modal Transformer for Multi-Modal Human State Recognition", submitted for xxxx. 
+This repository contains the source code for our paper: "Husformer: A Multi-Modal Transformer for Multi-Modal Human State Recognition".
 For more details, please refer to [our paper](xxxx).
 
 

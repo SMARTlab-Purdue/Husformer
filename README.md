@@ -46,6 +46,15 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 (The code was tested in Ubuntu 18.04 with Python 3.8.)
 
 ### Datasets
+DEAP:  
+WESAD: 
+MOCAS:
+CogLoad:
+| Dataset | link   |
+| DEAP  |[https://www.eecs.qmul.ac.uk/mmv/datasets/deap/](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/) |
+| WESAD | [https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29]https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29)   |
+| MOCAS | [https://polytechnic.purdue.edu/ahmrs/mocas-dataset]https://polytechnic.purdue.edu/ahmrs/mocas-dataset)   |
+| CogLoad | [https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset]https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset)   |
 
 Downloading addresses of datasets including DEAP, WESAD, MOCAS and CogLoad can be found in the above table.
 
@@ -100,7 +109,7 @@ If you find the code or the paper useful for your research, please cite our pape
 ## Acknowledgement
 
 Contributors:  
-[Ruiqi Wang](https://github.com/R7-Robot); [Dezhong Zhao](https://github.com/zdz0086); [Wonse Jo](https://github.com/).
+[Ruiqi Wang](http://www.smart-laboratory.org/group/Ruiqi_Wang.html); [Dezhong Zhao](https://github.com/zdz0086); [Wonse Jo](http://www.smart-laboratory.org/group/Wonse_Jo.html).
 
 Part of the code is based on the following repositories:  
 [Multimodal-Transformer](https://github.com/yaohungt/Multimodal-Transformer).

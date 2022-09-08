@@ -94,7 +94,7 @@ python main.py --eval
 
 If you find the code or the paper useful for your research, please cite our paper:
 ```
-
+(TBD) we will upload it soon.
 ```
 
 ## Acknowledgement

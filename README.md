@@ -30,7 +30,7 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 | Preprocessed-DEAP(Valance) | 4 | 97.01±2.06 | 97.08±2.15 |  [Pre-DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html) |
 | Preprocessed-DEAP(Arousal) | 4 | 97.67±1.45 | 97.69±1.53 | [Pre-DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html) |
 | WESAD | 4 | 85.02±1.91 | 85.85±2.14 |  [WESAD](https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29) |
-| Cogload | 4 | 80.40±2.34 | 81.27±2.63  | [Cogload.pkl](https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset)|
+| Cogload | 4 | 80.40±2.34 | 81.27±2.63  | [Cogload](https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset)|
 
 
 ## Usage

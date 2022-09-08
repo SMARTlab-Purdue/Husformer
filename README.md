@@ -23,14 +23,14 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 ## Main Experimental Results
 | Name | Modalities | Acc(%) | F1(%) | Dataset |
 | :---: | :---: | :---: | :---: | :---: | 
-| Raw-MOCAS | 5 | 93.71±2.26 | 93.82±2.41 | [Raw-MOCAS](https://zenodo.org/record/7023242#.YxeaIXbMIuU)|
-| Preprocessed-MOCAS | 5 | 96.42±2.11 | 96.51±2.03 | [Pre-MOCAS](https://zenodo.org/record/7023242#.YxeaIXbMIuU) |
+| Raw-MOCAS | 5 | 93.71±2.26 | 93.82±2.41 | [Raw-MOCAS](https://polytechnic.purdue.edu/ahmrs/mocas-dataset)|
+| Preprocessed-MOCAS | 5 | 96.42±2.11 | 96.51±2.03 | [Pre-MOCAS](https://polytechnic.purdue.edu/ahmrs/mocas-dataset) |
 | Raw-DEAP(Valance) | 4 | 85.98±1.38 | 86.21±1.40 | [Raw-DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html) |
 | Raw-DEAP(Arousal) | 4 | 86.28±2.04 | 86.78±2.11 | [Raw-DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html) |
 | Preprocessed-DEAP(Valance) | 4 | 97.01±2.06 | 97.08±2.15 |  [Pre-DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html) |
 | Preprocessed-DEAP(Arousal) | 4 | 97.67±1.45 | 97.69±1.53 | [Pre-DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html) |
 | WESAD | 4 | 85.02±1.91 | 85.85±2.14 |  [WESAD](https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29) |
-| Cogload | 4 | 80.40±2.34 | 81.27±2.63  | [Cogload.pkl](data/)|
+| Cogload | 4 | 80.40±2.34 | 81.27±2.63  | [Cogload.pkl][(data/](https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset)|
 
 
 ## Usage
@@ -46,15 +46,6 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 (The code was tested in Ubuntu 18.04 with Python 3.8.)
 
 ### Datasets
-DEAP:  
-WESAD: 
-MOCAS:
-CogLoad:
-| Dataset | link   |
-| DEAP  |[https://www.eecs.qmul.ac.uk/mmv/datasets/deap/](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/) |
-| WESAD | [https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29]https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29)   |
-| MOCAS | [https://polytechnic.purdue.edu/ahmrs/mocas-dataset]https://polytechnic.purdue.edu/ahmrs/mocas-dataset)   |
-| CogLoad | [https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset]https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset)   |
 
 Downloading addresses of datasets including DEAP, WESAD, MOCAS and CogLoad can be found in the above table.
 

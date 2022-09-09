@@ -44,21 +44,13 @@ def eval_hus(results, truths, exclude_zero=False):
     mae = np.mean(np.absolute(test_preds - test_truth))   # Average L1 distance between preds and truths
     corr = np.corrcoef(test_preds, test_truth)[0][1]
     mult_a5 = multiclass_acc(test_preds_a5, test_truth_a5)
-    
-    #macro_f_score = f1_score(test_preds[non_zeros], test_truth[non_zeros], average='macro')
-    #micro_f_score = f1_score(test_preds[non_zeros], test_truth[non_zeros], average='micro')
-    #binary_truth = (test_truth[non_zeros] > 0)
-    #binary_preds = (test_preds[non_zeros] > 0)
 
     _, _, f1, _ = precision_recall_fscore_support(test_preds[non_zeros], test_truth[non_zeros], average='weighted')
     print("-" * 50)
     print("MAE: ", mae)
     print("Correlation Coefficient: ", corr)
     print("mult_acc: ", mult_a5)
-    #print("macro F1 score: ", macro_f_score)
-    #print("micro F1 score: ", micro_f_score)
     print('f1_score:', f1)
-    #print("binary Accuracy: ", accuracy_score(test_preds[non_zeros], test_truth[non_zeros]))
     print("-" * 50)
 
 

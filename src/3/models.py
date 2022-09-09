@@ -34,7 +34,7 @@ class HUSFORMERModel(nn.Module):
         # 3. Self Attentions
         self.trans_final = self.get_network(self_type='policy', layers=5)
         
-        # Projection layers
+        # 4. Projection layers
         self.proj1 = self.proj2 = nn.Linear(combined_dim, combined_dim)
         self.out_layer = nn.Linear(combined_dim, output_dim)
 

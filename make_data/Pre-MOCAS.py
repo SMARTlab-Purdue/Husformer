@@ -32,7 +32,6 @@ def data(csv):
 			for c in range(-3,-5,-1):
 				modality5_data1.append(line[c].strip('[').rstrip(']').replace("\n", '').split(', '))
 			
-
 			modality1_data.append(modality1_data1)
 			modality2_data.append(modality2_data1)
 			modality3_data.append(modality3_data1)
@@ -46,8 +45,6 @@ def data(csv):
 				label_data.append(-1)
 	csv_len = len(modality1_data)
 	return modality1_data,modality2_data,modality3_data,modality4_data,modality5_data,label_data,csv_len
-
-
 
 def pkl_make(modality11,modality21,modality31,modality41,modality51,label1,train_id,val_id,test_id,pkl,epoch):
 	print('data over'+ str(epoch))
@@ -112,12 +109,11 @@ def pkl_make(modality11,modality21,modality31,modality41,modality51,label1,train
 	pkl1['train'] = train
 	pkl1['valid'] = valid
 	pkl1['test'] = test
-	print('1')
 	pickle.dump(pkl1,pkl)
 	print('done'+ str(epoch))
 	return
 
-def NASA (array,lenth,modality11,modality21,modality31,modality41,modality51,label1):
+def MOCAS (array,lenth,modality11,modality21,modality31,modality41,modality51,label1):
 	for i in range(10):
 		train1 = []
 		val_start = int(i*lenth/10)
@@ -167,7 +163,7 @@ if __name__ == '__main__':
 	indices = np.arange(len(modality11))
 	np.random.shuffle(indices)
 
-	NASA(indices,indices.shape[0],modality11,modality21,modality31,modality41,modality51,label1)
+	MOCAS(indices,indices.shape[0],modality11,modality21,modality31,modality41,modality51,label1)
 
 
 

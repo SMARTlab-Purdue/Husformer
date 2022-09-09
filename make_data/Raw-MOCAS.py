@@ -9,7 +9,7 @@ def data(csv):
 	modality4_data = []
 	modality5_data = []
 	label_data = []
-	
+
 	for i,line in enumerate(csv):
 		if i >= 1:
 			modality1_data1 = []
@@ -22,10 +22,10 @@ def data(csv):
 			modality2 = line[52].strip('[').rstrip(']').replace("\n", '').split(', ')
 			modality2_data2 = list(filter(None, modality2))
 			modality2_data1.append(modality2_data2)
-			for b in range(12,17,1):
-				modality3_data1.append(line[b].strip('[').rstrip(']').split(', '))
-			for a in range(19,44,1):
-				modality4_data1.append(line[a].strip('[').rstrip(']').split(', '))
+			for a in range(12,17,1):
+				modality3_data1.append(line[a].strip('[').rstrip(']').split(', '))
+			for b in range(19,44,1):
+				modality4_data1.append(line[b].strip('[').rstrip(']').split(', '))
 			modality5_data1.append(float(line[-5].strip('[').rstrip(']')))
 
 			modality1_data.append(modality1_data1)
@@ -41,8 +41,6 @@ def data(csv):
 				label_data.append(-1)
 	csv_len = len(modality1_data)
 	return modality1_data,modality2_data,modality3_data,modality4_data,modality5_data,label_data,csv_len
-
-
 
 def pkl_make(modality11,modality21,modality31,modality41,modality51,label1,train_id,val_id,test_id,pkl,epoch):
 	print('data over'+ str(epoch))
@@ -107,7 +105,7 @@ def pkl_make(modality11,modality21,modality31,modality41,modality51,label1,train
 	pkl1['train'] = train
 	pkl1['valid'] = valid
 	pkl1['test'] = test
-	print('1')
+
 	pickle.dump(pkl1,pkl)
 	print('done'+ str(epoch))
 	return
@@ -161,7 +159,6 @@ if __name__ == '__main__':
 		csv1.close()
 	indices = np.arange(len(modality11))
 	np.random.shuffle(indices)
-
 	MOCAS(indices,indices.shape[0],modality11,modality21,modality31,modality41,modality51,label1)
 
 

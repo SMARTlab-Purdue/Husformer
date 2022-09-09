@@ -7,17 +7,10 @@ from modules.transformer import TransformerEncoder
 
 class HUSFORMERModel(nn.Module):
     def __init__(self, hyp_params):
-        """
-        Construct a MulT model.
-        """
+
         super(HUSFORMERModel, self).__init__()
         self.orig_d_m1, self.orig_d_m2, self.orig_d_m3,self.orig_d_m4,self.orig_d_m5  = hyp_params.orig_d_m1, hyp_params.orig_d_m2, hyp_params.orig_d_m3,hyp_params.orig_d_m4,hyp_params.orig_d_m5
         self.d_m = 30
-        '''
-        self.vonly = hyp_params.vonly
-        self.aonly = hyp_params.aonly
-        self.lonly = hyp_params.lonly
-        '''
         self.num_heads = hyp_params.num_heads
         self.layers = hyp_params.layers
         self.attn_dropout = hyp_params.attn_dropout
@@ -30,6 +23,7 @@ class HUSFORMERModel(nn.Module):
         combined_dim = 30     
         output_dim = hyp_params.output_dim        # This is actually not a hyperparameter :-)
         self.channels = hyp_params.m1_len+hyp_params.m2_len+hyp_params.m3_len+hyp_params.m4_len+hyp_params.m5_len
+        
         # 1. Temporal convolutional layers
         self.proj_m1 = nn.Conv1d(self.orig_d_m1, self.d_m, kernel_size=1, padding=0, bias=False)
         self.proj_m2 = nn.Conv1d(self.orig_d_m2, self.d_m, kernel_size=1, padding=0, bias=False)
@@ -37,19 +31,19 @@ class HUSFORMERModel(nn.Module):
         self.proj_m4 = nn.Conv1d(self.orig_d_m4, self.d_m, kernel_size=1, padding=0, bias=False)
         self.proj_m5 = nn.Conv1d(self.orig_d_m5, self.d_m, kernel_size=1, padding=0, bias=False)
         self.final_conv = nn.Conv1d(self.channels, 1, kernel_size=1, padding=0, bias=False)
-        # 2. global attention
         
+        # 2. global attention
         self.trans_m1_all = self.get_network(self_type='m1_all', layers=3)
         self.trans_m2_all = self.get_network(self_type='m2_all', layers=3)
         self.trans_m3_all = self.get_network(self_type='m3_all', layers=3)
         self.trans_m4_all = self.get_network(self_type='m4_all', layers=3)
         self.trans_m5_all = self.get_network(self_type='m5_all', layers=3)
-        # 3. Self Attentions (Could be replaced by LSTMs, GRUs, etc.)
-        #    [e.g., self.trans_x_mem = nn.LSTM(self.d_x, self.d_x, 1)
+        
+        # 3. Self Attentions
         self.trans_final = self.get_network(self_type='policy', layers=5)
+        
         # Projection layers
         self.proj1 = self.proj2 = nn.Linear(combined_dim, combined_dim)
-        #nn.Linear(combined_dim, combined_dim)
         self.out_layer = nn.Linear(combined_dim, output_dim)
 
     def get_network(self, self_type='l', layers=-1):
@@ -68,9 +62,6 @@ class HUSFORMERModel(nn.Module):
                                   attn_mask=self.attn_mask)
             
     def forward(self,m1,m2,m3,m4,m5):
-        '''
-        text, audio, and vision should have dimension [batch_size, seq_len, n_features]
-        '''
         
         m_1 = m1.transpose(1, 2)
         m_2 = m2.transpose(1, 2)

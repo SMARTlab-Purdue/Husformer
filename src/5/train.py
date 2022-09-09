@@ -15,10 +15,8 @@ from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import accuracy_score, f1_score
 from src.eval_metrics import *
 
-
 def initiate(hyp_params, train_loader, valid_loader, test_loader):
     model = getattr(models, hyp_params.model+'Model')(hyp_params)
-
     if hyp_params.use_cuda:
         model = model.cuda()
 
@@ -31,20 +29,12 @@ def initiate(hyp_params, train_loader, valid_loader, test_loader):
                 'scheduler': scheduler}
     return train_model(settings, hyp_params, train_loader, valid_loader, test_loader)
 
-
-####################################################################
-#
-# Training and evaluation scripts
-#
-####################################################################
-
 def train_model(settings, hyp_params, train_loader, valid_loader, test_loader):
     model = settings['model']
     optimizer = settings['optimizer']
     criterion = settings['criterion']
     scheduler = settings['scheduler']
     
-
     def train(model, optimizer, criterion):
         epoch_loss = 0
         model.train()
@@ -55,15 +45,12 @@ def train_model(settings, hyp_params, train_loader, valid_loader, test_loader):
         for i_batch, (batch_X, batch_Y, batch_META) in enumerate(train_loader):
             sample_ind, m1,m2,m3,m4,m5 = batch_X
             eval_attr = batch_Y.squeeze(-1)   # if num of labels is 1
-            
             model.zero_grad()
             if hyp_params.use_cuda:
                 with torch.cuda.device(0):
                     m1,m2,m3,m4,m5,eval_attr = m1.cuda(),m2.cuda(),m3.cuda(),m4.cuda(),m5.cuda(),eval_attr.cuda()
-            
             batch_size = m1.size(0)
             batch_chunk = hyp_params.batch_chunk
-
             combined_loss = 0
             net = nn.DataParallel(model) if batch_size > 10 else model
             if batch_chunk > 1:
@@ -173,7 +160,6 @@ def train_model(settings, hyp_params, train_loader, valid_loader, test_loader):
     n_parameters = sum(p.numel() for p in model.parameters())
     print('n_parameters:',n_parameters)
     eval_hus(results, truths, True)
-
-
+    
     sys.stdout.flush()
     input('[Press Any Key to start another run]')

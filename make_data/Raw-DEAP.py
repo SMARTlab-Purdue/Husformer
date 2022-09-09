@@ -1,7 +1,4 @@
-import torch
-import torch.nn as nn
 import numpy as np
-from torchvision import datasets, transforms
 import pickle
 import csv
 

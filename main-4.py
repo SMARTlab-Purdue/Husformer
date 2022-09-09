@@ -4,7 +4,6 @@ from src.utils import *
 from torch.utils.data import DataLoader
 from src import train
 from src import test
- 
 
 parser = argparse.ArgumentParser(description='Husformer Sentiment Analysis')
 parser.add_argument('-f', default='', type=str)
@@ -91,11 +90,6 @@ if torch.cuda.is_available():
         torch.set_default_tensor_type('torch.cuda.FloatTensor')
         use_cuda = True
 
-####################################################################
-#
-# Load the dataset (aligned or non-aligned)
-#
-####################################################################
 
 print("Start loading the data....")
 
@@ -108,11 +102,6 @@ valid_loader = DataLoader(valid_data, batch_size=args.batch_size, shuffle=True)
 test_loader = DataLoader(test_data, batch_size=args.batch_size, shuffle=True)
 
 print('Finish loading the data....')
-####################################################################
-#
-# Hyperparameters
-#
-####################################################################
 
 hyp_params = args
 hyp_params.orig_d_m1, hyp_params.orig_d_m2, hyp_params.orig_d_m3,hyp_params.orig_d_m4 = train_data.get_dim()
@@ -126,7 +115,6 @@ hyp_params.n_train, hyp_params.n_valid, hyp_params.n_test = len(train_data), len
 hyp_params.model = str.upper(args.model.strip())
 hyp_params.output_dim = output_dim_dict.get(dataset, 1)
 hyp_params.criterion = criterion_dict.get(dataset, 'L1Loss')
-
 
 if __name__ == '__main__':
     if args.eval:

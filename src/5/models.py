@@ -32,7 +32,7 @@ class HUSFORMERModel(nn.Module):
         self.proj_m5 = nn.Conv1d(self.orig_d_m5, self.d_m, kernel_size=1, padding=0, bias=False)
         self.final_conv = nn.Conv1d(self.channels, 1, kernel_size=1, padding=0, bias=False)
         
-        # 2. Cross-modal attention
+        # 2. Cross-modal Attentions
         self.trans_m1_all = self.get_network(self_type='m1_all', layers=3)
         self.trans_m2_all = self.get_network(self_type='m2_all', layers=3)
         self.trans_m3_all = self.get_network(self_type='m3_all', layers=3)

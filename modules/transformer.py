@@ -40,7 +40,6 @@ class TransformerEncoder(nn.Module):
                                                 res_dropout=res_dropout,
                                                 attn_mask=attn_mask)
             self.layers.append(new_layer)
-
         self.register_buffer('version', torch.Tensor([2]))
         self.normalize = True
         if self.normalize:
@@ -77,14 +76,12 @@ class TransformerEncoder(nn.Module):
         
         # encoder layers
         intermediates = [x]
-        #print(self.layers,type(self.layers))
         for layer in self.layers:
             if x_in_k is not None and x_in_v is not None:
                 x = layer(x, x_k, x_v)
             else:
                 x = layer(x)
             intermediates.append(x)
-        #print('1')
         if self.normalize:
             x = self.layer_norm(x)
 
@@ -151,11 +148,9 @@ class TransformerEncoderLayer(nn.Module):
             x_k = self.maybe_layer_norm(0, x_k, before=True)
             x_v = self.maybe_layer_norm(0, x_v, before=True) 
             x, _ = self.self_attn(query=x, key=x_k, value=x_v, attn_mask=mask)
-        #print(x.shape)
         x = F.dropout(x, p=self.res_dropout, training=self.training)
         x = residual + x
         x = self.maybe_layer_norm(0, x, after=True)
-
         residual = x
         x = self.maybe_layer_norm(1, x, before=True)
         x = F.relu(self.fc1(x))

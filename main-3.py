@@ -5,20 +5,16 @@ from torch.utils.data import DataLoader
 from src import train
 from src import test
  
-
 parser = argparse.ArgumentParser(description='Husformer Sentiment Analysis')
 parser.add_argument('-f', default='', type=str)
-
 # Fixed
 parser.add_argument('--model', type=str, default='Husformer',
                     help='name of the model to use (Transformer, etc.)')
-
 # Tasks
 parser.add_argument('--dataset', type=str, default='Husformer',
                     help='dataset to use (default: mosei_senti)')
 parser.add_argument('--data_path', type=str, default='data',
                     help='path for storing the dataset')
-
 # Dropouts
 parser.add_argument('--attn_dropout', type=float, default=0.05,
                     help='attention dropout')
@@ -30,7 +26,6 @@ parser.add_argument('--res_dropout', type=float, default=0.1,
                     help='residual block dropout')
 parser.add_argument('--out_dropout', type=float, default=0.0,
                     help='output layer dropout')
-
 # Architecture
 parser.add_argument('--nlevels', type=int, default=5,
                     help='number of layers in the network (default: 5)')
@@ -38,7 +33,6 @@ parser.add_argument('--num_heads', type=int, default=3,
                     help='number of heads for the transformer network (default: 3)')
 parser.add_argument('--attn_mask', action='store_false',
                     help='use attention mask for Transformer (default: true)')
-
 # Tuning
 parser.add_argument('--batch_size', type=int, default=1024, metavar='N',
                     help='batch size (default: 1024)')
@@ -54,7 +48,6 @@ parser.add_argument('--when', type=int, default=20,
                     help='when to decay learning rate (default: 20)')
 parser.add_argument('--batch_chunk', type=int, default=1,
                     help='number of chunks per batch (default: 1)')
-
 # Logistics
 parser.add_argument('--log_interval', type=int, default=30,
                     help='frequency of result logging (default: 30)')
@@ -91,12 +84,6 @@ if torch.cuda.is_available():
         torch.set_default_tensor_type('torch.cuda.FloatTensor')
         use_cuda = True
 
-####################################################################
-#
-# Load the dataset (aligned or non-aligned)
-#
-####################################################################
-
 print("Start loading the data....")
 
 train_data = get_data(args, dataset, 'train')
@@ -108,11 +95,6 @@ valid_loader = DataLoader(valid_data, batch_size=args.batch_size, shuffle=True)
 test_loader = DataLoader(test_data, batch_size=args.batch_size, shuffle=True)
 
 print('Finish loading the data....')
-####################################################################
-#
-# Hyperparameters
-#
-####################################################################
 
 hyp_params = args
 hyp_params.orig_d_m1, hyp_params.orig_d_m2, hyp_params.orig_d_m3 = train_data.get_dim()

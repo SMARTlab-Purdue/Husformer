@@ -1,5 +1,4 @@
 import math
-
 import torch
 import torch.nn as nn
 
@@ -32,7 +31,6 @@ class SinusoidalPositionalEmbedding(nn.Module):
     Padding symbols are ignored, but it is necessary to specify whether padding
     is added on the left side (left_pad=True) or right side (left_pad=False).
     """
-
     def __init__(self, embedding_dim, padding_idx=0, left_pad=0, init_size=128):
         super().__init__()
         self.embedding_dim = embedding_dim

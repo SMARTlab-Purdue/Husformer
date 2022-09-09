@@ -31,19 +31,11 @@ def initiate(hyp_params, train_loader, valid_loader, test_loader):
                 'scheduler': scheduler}
     return train_model(settings, hyp_params, train_loader, valid_loader, test_loader)
 
-
-####################################################################
-#
-# Training and evaluation scripts
-#
-####################################################################
-
 def train_model(settings, hyp_params, train_loader, valid_loader, test_loader):
     model = settings['model']
     optimizer = settings['optimizer']
     criterion = settings['criterion']
     scheduler = settings['scheduler']
-    
 
     def train(model, optimizer, criterion):
         epoch_loss = 0
@@ -171,7 +163,6 @@ def train_model(settings, hyp_params, train_loader, valid_loader, test_loader):
     n_parameters = sum(p.numel() for p in model.parameters())
     print('n_parameters:',n_parameters)
     eval_hus(results, truths, True)
-
 
     sys.stdout.flush()
     input('[Press Any Key to start another run]')

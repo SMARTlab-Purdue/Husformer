@@ -14,12 +14,12 @@ def data(mat_data1,mat_label1):
 	modality4_data1 = []
 	label_data = []
 
-	for k in range(mat_data1.shape[0]):#8064
+	for k in range(mat_data1.shape[0]):
 		modality1_data1.append(mat_data1[k][:32]) 
 		modality2_data1.append(mat_data1[k][32:34])
 		modality3_data1.append(mat_data1[k][34:36])
 		modality4_data1.append(mat_data1[k][36])
-	for x in range(0,len(modality3_data1),128):#63
+	for x in range(0,len(modality3_data1),128):
 		modality1_data.append(modality3_data1[i:i+128])
 		modality2_data.append(modality2_data1[i:i+128])
 		modality3_data.append(modality4_data1[i:i+128])
@@ -129,15 +129,15 @@ if __name__ == '__main__':
 	modality41 = []
 	label1 = []
 
-	for i,line in enumerate(txt1):#32个mat
+	for i,line in enumerate(txt1):
 		mat_path = line.rstrip('\n')
 		print(mat_path)
 		mat_cont = scipy.io.loadmat(mat_path)
-		mat_data = np.transpose(mat_cont['data'], (0, 2, 1))#40*8064*40
-		mat_label = mat_cont['labels']#40*4
+		mat_data = np.transpose(mat_cont['data'], (0, 2, 1))
+		mat_label = mat_cont['labels']
 		for j in range(mat_data.shape[0]):
-			mat_data1 = mat_data[j]#8064*40
-			mat_label1 = mat_label[j]#4
+			mat_data1 = mat_data[j]
+			mat_label1 = mat_label[j]
 			modality1_data,modality2_data,modality3_data,modality4_data,label_data,data_len = data(mat_data1,mat_label1)
 			modality11.extend(modality1_data)
 			modality21.extend(modality2_data)

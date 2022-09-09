@@ -76,11 +76,6 @@ def data_ready(pkl2):
     index = len(modality12)
     return modality12,modality22,modality32,modality42,label2,index
 
-
-
-
-
-
 def pkl_make(modality1,modality2,modality3,modality4,label,train_id,val_id,test_id,pkl,epoch):
     print('data over'+ str(epoch))
     modality1_train =  np.array(modality1)[train_id]
@@ -106,7 +101,6 @@ def pkl_make(modality1,modality2,modality3,modality4,label,train_id,val_id,test_
     label_train = np.array(label)[train_id].reshape(train_id.shape[0],1,1)
     label_val = np.array(label)[val_id].reshape(val_id.shape[0],1,1)
     label_test = np.array(label)[test_id].reshape(test_id.shape[0],1,1)
-
     print('array over'+ str(epoch))
     pkl1 = {}
     train = {}
@@ -186,5 +180,4 @@ if __name__ == '__main__':
 
     indices = np.arange(len(modality11))
     np.random.shuffle(indices)
-
     WESAD(indices,indices.shape[0],modality11,modality21,modality31,modality41,label1)

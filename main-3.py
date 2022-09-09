@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser(description='Husformer Sentiment Analysis')
 parser.add_argument('-f', default='', type=str)
 # Fixed
 parser.add_argument('--model', type=str, default='Husformer',
-                    help='name of the model to use (Transformer, etc.)')
+                    help='name of the model to use (default: Husformer)')
 # Tasks
 parser.add_argument('--dataset', type=str, default='Husformer',
                     help='dataset to use (default: Husformer)')

@@ -5,7 +5,6 @@ from torch.utils.data import DataLoader
 from src import train
 from src import test
  
-
 parser = argparse.ArgumentParser(description='Husformer Sentiment Analysis')
 parser.add_argument('-f', default='', type=str)
 
@@ -92,12 +91,6 @@ if torch.cuda.is_available():
         torch.set_default_tensor_type('torch.cuda.FloatTensor')
         use_cuda = True
 
-####################################################################
-#
-# Load the dataset (aligned or non-aligned)
-#
-####################################################################
-
 print("Start loading the data....")
 
 train_data = get_data(args, dataset, 'train')
@@ -109,12 +102,6 @@ valid_loader = DataLoader(valid_data, batch_size=args.batch_size, shuffle=True)
 test_loader = DataLoader(test_data, batch_size=args.batch_size, shuffle=True)
 
 print('Finish loading the data....')
-
-####################################################################
-#
-# Hyperparameters
-#
-####################################################################
 
 hyp_params = args
 hyp_params.orig_d_m1, hyp_params.orig_d_m2, hyp_params.orig_d_m3,hyp_params.orig_d_m4,hyp_params.orig_d_m5 = train_data.get_dim()
@@ -135,4 +122,3 @@ if __name__ == '__main__':
         test = test.eval(hyp_params, test_loader)
     else:
         test_loss = train.initiate(hyp_params, train_loader, valid_loader, test_loader)
-

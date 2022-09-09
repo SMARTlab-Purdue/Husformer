@@ -4,7 +4,7 @@ import torch.nn.functional as F
 
 from modules.transformer import TransformerEncoder
 
-#best,0.85，不用linear0.868
+
 class HUSFORMERModel(nn.Module):
     def __init__(self, hyp_params):
         """

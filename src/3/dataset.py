@@ -9,12 +9,6 @@ if torch.cuda.is_available():
     torch.set_default_tensor_type('torch.cuda.FloatTensor')
 else:
     torch.set_default_tensor_type('torch.FloatTensor')
-    
-############################################################################################
-# This file provides basic processing script for the multimodal datasets we use. For other
-# datasets, small modifications may be needed (depending on the type of the data, etc.)
-############################################################################################
-
 
 class Multimodal_Datasets(Dataset):
     def __init__(self, dataset_path, data='Husformer', split_type='train'):
@@ -27,12 +21,11 @@ class Multimodal_Datasets(Dataset):
         self.m2 = torch.tensor(dataset[split_type]['modality_2'].astype(np.float32)).cpu().detach()
         self.m3 = torch.tensor(dataset[split_type]['modality_3'].astype(np.float32)).cpu().detach()
         self.labels = torch.tensor(dataset[split_type]['label'].astype(np.float32)).cpu().detach()
-        # Note: this is STILL an numpy array
         self.meta = dataset[split_type]['id']
 
         self.data = data
         
-        self.n_modalities = 4 
+        self.n_modalities = 3
     def get_n_modalities(self):
         return self.n_modalities
     def get_seq_len(self):

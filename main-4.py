@@ -14,7 +14,7 @@ parser.add_argument('--model', type=str, default='Husformer',
 
 # Tasks
 parser.add_argument('--dataset', type=str, default='Husformer',
-                    help='dataset to use (default: mosei_senti)')
+                    help='dataset to use (default: Husformer)')
 parser.add_argument('--data_path', type=str, default='data',
                     help='path for storing the dataset')
 
@@ -62,7 +62,7 @@ parser.add_argument('--seed', type=int, default=1111,
 parser.add_argument('--no_cuda', action='store_true',
                     help='do not use cuda')
 parser.add_argument('--name', type=str, default='hus',
-                    help='name of the trial (default: "mult")')
+                    help='name of the trial (default: "hus")')
 parser.add_argument('--eval', action='store_true',
                     help='Perform evaluation only')
 args = parser.parse_args()
@@ -72,13 +72,11 @@ dataset = str.lower(args.dataset.strip())
 use_cuda = False
 
 output_dim_dict = {
-    'mosi': 1,
-    'mosei_senti': 1,
-    'iemocap': 8
+    'Husformer': 1
 }
 
 criterion_dict = {
-    'iemocap': 'CrossEntropyLoss'
+    'Husformer': 'CrossEntropyLoss'
 }
 
 torch.set_default_tensor_type('torch.FloatTensor')

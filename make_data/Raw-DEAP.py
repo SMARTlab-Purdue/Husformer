@@ -15,17 +15,17 @@ def data(csv):
 	for i,line in enumerate(csv):
 		if i >= 1:
 			if int(float(line[-8])) in  [2,3,4,5]:
-				modality1_data1 = []
 				modality2_data1 = []
 				modality3_data1 = []
 				modality4_data1 = []
-				for a in range(2,34,1):#modality3
-					modality3_data1.append(float(line[a]))
-				for b in range(34,38,1):#emg
-					modality2_data1.append(float(line[b]))
-				for c in range(38,42,1):#eog
-					modality4_data1.append(float(line[c]))
 				modality1_data1 = float(line[42])
+				
+				for a in range(34,38,1):
+					modality2_data1.append(float(line[a]))
+				for b in range(2,34,1):
+					modality3_data1.append(float(line[b]))
+				for c in range(38,42,1):
+					modality4_data1.append(float(line[c]))
 
 				modality1_data.append(modality1_data1)
 				modality2_data.append(modality2_data1)
@@ -42,8 +42,8 @@ def data(csv):
 	modality1_data2 = []
 	modality2_data2 = []
 	modality3_data2 = []
-	label_data2 = []
 	modality4_data2 = []
+	label_data2 = []
 
 	for i in range(0,len(modality1_data),512):
 		modality1_data2.append(modality1_data[i:i+512])
@@ -62,14 +62,11 @@ def data(csv):
 	label_data4 = []
 	for i in range(label_data3.shape[0]): 
 		label_data4.append(round(np.mean(label_data3[i])))
-
 	csv_len = len(modality1_data2)
-	
 	return modality1_data2,modality2_data2,modality3_data2,modality4_data2,label_data4,csv_len
 
 def pkl_make(modality11,modality21,modality31,modality41,label1,train_id,val_id,test_id,pkl,epoch):
 	print('data over'+ str(epoch))
-
 	modality1_train = np.array(modality11)[train_id].reshape(train_id.shape[0],1,512)
 	modality1_val = np.array(modality11)[val_id].reshape(val_id.shape[0],1,512)
 	modality1_test = np.array(modality11)[test_id].reshape(test_id.shape[0],1,512)
@@ -94,7 +91,6 @@ def pkl_make(modality11,modality21,modality31,modality41,label1,train_id,val_id,
 	label_val = np.array(label1)[val_id].reshape(val_id.shape[0],1,1)
 	label_test = np.array(label1)[test_id].reshape(test_id.shape[0],1,1)
 	print('array over'+ str(epoch))
-	print('reshape over'+ str(epoch))
 	pkl1 = {}
 	train = {}
 	test = {}
@@ -175,5 +171,4 @@ if __name__ == '__main__':
 	print(len(modality31),len(modality11),len(label1))
 	indices = np.arange(len(modality11))
 	np.random.shuffle(indices)
-	print('nasa')
 	DEAP(indices,indices.shape[0],modality11,modality21,modality31,modality41,label1)

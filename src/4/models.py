@@ -28,7 +28,7 @@ class HUSFORMERModel(nn.Module):
         self.proj_m4 = nn.Conv1d(self.orig_d_m4, self.d_m, kernel_size=1, padding=0, bias=False)
         self.final_conv = nn.Conv1d(self.channels, 1, kernel_size=1, padding=0, bias=False)
         
-        # 2. global attention
+        # 2. Cross-modal Attentions
         self.trans_m1_all = self.get_network(self_type='m1_all', layers=3)
         self.trans_m2_all = self.get_network(self_type='m2_all', layers=3)
         self.trans_m3_all = self.get_network(self_type='m3_all', layers=3)
@@ -37,7 +37,7 @@ class HUSFORMERModel(nn.Module):
         # 3. Self Attentions 
         self.trans_final = self.get_network(self_type='policy', layers=5)
         
-        # Projection layers
+        # 4. Projection layers
         self.proj1 = self.proj2 = nn.Linear(combined_dim, combined_dim)
         self.out_layer = nn.Linear(combined_dim, output_dim)
 

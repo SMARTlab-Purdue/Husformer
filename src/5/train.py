@@ -70,7 +70,6 @@ def train_model(settings, hyp_params, train_loader, valid_loader, test_loader):
                     raw_loss_i = criterion(preds_i, eval_attr_i) / batch_chunk
                     raw_loss += raw_loss_i
                     raw_loss_i.backward()
-                ctc_loss.backward()
                 combined_loss = raw_loss 
             else:
                 preds, hiddens = net(m1,m2,m3,m4,m5)

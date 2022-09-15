@@ -93,9 +93,6 @@ class HUSFORMERModel(nn.Module):
         last_hs2 = self.trans_final(last_hs1).permute(1, 0, 2)
         last_hs = self.final_conv(last_hs2).squeeze(1)
 
-        # A residual block
-        last_hs_proj = self.proj2(F.dropout(F.selu(self.proj1(last_hs)), p=self.out_dropout, training=self.training))
-        last_hs_proj += last_hs
         output = self.out_layer(last_hs)
 
         return output, last_hs

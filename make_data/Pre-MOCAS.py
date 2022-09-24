@@ -26,8 +26,8 @@ def data(csv):
 				modality3_data1.append(line[b].strip('[').rstrip(']').split(', '))
 			for a in range(19,44,1):
 				modality4_data1.append(line[a].strip('[').rstrip(']').split(', '))
-			for c in range(-3,-5,-1):
-				modality5_data1.append(line[c].strip('[').rstrip(']').replace("\n", '').split(', '))
+			for c in range(-6,-8,-1):
+				modality5_data1.append(line[c].strip('[').rstrip(']'))
 			
 			modality1_data.append(modality1_data1)
 			modality2_data.append(modality2_data1)

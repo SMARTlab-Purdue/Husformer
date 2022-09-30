@@ -100,7 +100,7 @@ If you find the code or the paper useful for your research, please cite our pape
 ## Acknowledgement
 
 Contributors:  
-[Ruiqi Wang](https://github.com/R7-Robot); [Dezhong Zhao](https://github.com/zdz0086); [Wonse Jo](http://www.smart-laboratory.org/group/Wonse_Jo.html).
+[Ruiqi Wang](https://github.com/R7-Robot); [Dezhong Zhao](https://github.com/zdz0086); [Wonse Jo](http://www.smart-laboratory.org/group/Wonse_Jo.html); [Byung-Cheol Min](http://www.smart-laboratory.org/group/bcm.html).
 
 Part of the code is based on the following repositories:  
 [Multimodal-Transformer](https://github.com/yaohungt/Multimodal-Transformer).

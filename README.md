@@ -1,6 +1,6 @@
 # Husformer
 This repository contains the source code for our paper: "Husformer: A Multi-Modal Transformer for Multi-Modal Human State Recognition".
-For more details, please refer to [our paper](xxxx).
+For more details, please refer to [our paper](https://arxiv.org/abs/2209.15182).
 
 
 ## Abstract
@@ -94,7 +94,12 @@ python main.py --eval
 
 If you find the code or the paper useful for your research, please cite our paper:
 ```
-(TBD) we will upload it soon.
+@article{wang2022husformer,
+  title={Husformer: A Multi-Modal Transformer for Multi-Modal Human State Recognition},
+  author={Wang, Ruiqi and Jo, Wonse and Zhao, Dezhong and Wang, Weizheng and Yang, Baijian and Chen, Guohua and Min, Byung-Cheol},
+  journal={arXiv preprint arXiv:2209.15182},
+  year={2022}
+}
 ```
 
 ## Acknowledgement

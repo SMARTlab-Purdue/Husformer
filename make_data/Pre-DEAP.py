@@ -19,7 +19,7 @@ def data(mat_data1,mat_label1):
 		modality2_data1.append(mat_data1[k][32:34])
 		modality3_data1.append(mat_data1[k][34:36])
 		modality4_data1.append(mat_data1[k][36])
-	for x in range(0,len(modality3_data1),128):
+	for i in range(0,len(modality3_data1),128):
 		modality1_data.append(modality3_data1[i:i+128])
 		modality2_data.append(modality2_data1[i:i+128])
 		modality3_data.append(modality4_data1[i:i+128])

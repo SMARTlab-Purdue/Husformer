@@ -101,5 +101,6 @@ Part of the code is based on the following repositories:
 [Multimodal-Transformer](https://github.com/yaohungt/Multimodal-Transformer).
 
 
-
+## Notes
+Please note that the code available on GitHub has not been updated with our latest experimental configurations; this update will occur once our paper is officially published.
 

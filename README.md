@@ -36,17 +36,11 @@ Human state recognition is a critical topic due to its pervasive and crucial app
 (The code was tested in Ubuntu 18.04 with Python 3.8.)
 
 ### Datasets
-| Name | Modalities| Dataset |
-| :---: | :---: | :---: | 
-
-| MOCAS | 5 |  [Pre-MOCAS](https://polytechnic.purdue.edu/ahmrs/mocas-dataset) |
 
 
-| DEAP| 4 | [Pre-DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html) |
-| WESAD | 6 |   [WESAD](https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29) |
-| Cogload | 5  | [Cogload](https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset)|
+[MOCAS](https://polytechnic.purdue.edu/ahmrs/mocas-dataset) | [DEAP](https://www.eecs.qmul.ac.uk/mmv/datasets/deap/download.html) |[WESAD](https://archive.ics.uci.edu/ml/datasets/WESAD+%28Wearable+Stress+and+Affect+Detection%29) | [Cogload](https://gitlab.fri.uni-lj.si/lrk/mobile-cogload-dataset)
 
-Downloading addresses of datasets including DEAP, WESAD, MOCAS and CogLoad can be found in the above table.
+Downloading addresses of datasets including DEAP, WESAD, MOCAS and CogLoad can be found above.
 
 #### Convert the data file format to '.pkl'
 

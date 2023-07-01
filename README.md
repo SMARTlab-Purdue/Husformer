@@ -65,6 +65,7 @@ We provide 3 model files which are corresponding to task scenarios involving 3, 
 ### Hyper-parameters of The Husformer
 
 |Parameter Name|Raw DEAP|Preprocessed DEAP|WESAD|Raw MOCAS|Preprocessed MOCAS|Cogload|
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 |Batch Size|1024|1024|512|64|128|1024|
 |Initial Learning Rate|2e-3|2e-3|1e-3|1e-3|1e-3|1e-3|
 |Optimizer|Adam|Adam|Adam|Adam|Adam|Adam|

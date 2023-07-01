@@ -62,6 +62,20 @@ We provide 3 model files which are corresponding to task scenarios involving 3, 
 
 2. Rename the target 'main-x.py' in [src](src), e.g., [main-3.py](main-3.py), [main-4.py](main-4.py), [main-5.py](main-5.py), as 'main.py'.
 
+### Hyper-parameters of The Husformer
+
+|Parameter Name|Raw DEAP|Preprocessed DEAP|WESAD|Raw MOCAS|Preprocessed MOCAS|Cogload|
+|Batch Size|1024|1024|512|64|128|1024|
+|Initial Learning Rate|2e-3|2e-3|1e-3|1e-3|1e-3|1e-3|
+|Optimizer|Adam|Adam|Adam|Adam|Adam|Adam|
+|Transformer Hidden Unit Size|40|40|40|40|40|40|
+|Crossmodal Attention Heads|3|3|3|5|5|3|
+|Crossmodal Attention Block Dropout|0.1|0.1|0.05|0.05|0.05|0.1|
+|Output Dropout|0.1|0.1|0.1|0.1|0.1|0.1|
+|Focal Loss $\alpha_c$|[0.1,0.1,0.8]|[0.15,0.05,0.8]|[0.4,0.3,0.3]|[0.2,0.1,0.7]|[0.15,0.15,0.7]|[0.1,0.1,0.8]|
+|Focal Loss $\gamma$|3|3|2|3|3|2|
+|Epochs|20|20|60|40|40|80|
+
 ### Run the code
 
 0. We provide converted [cogload.pkl](data/) in [data](data/). You should make data as following if using other datasets.

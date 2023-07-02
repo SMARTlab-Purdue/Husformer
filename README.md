@@ -62,7 +62,7 @@ We provide 3 model files which are corresponding to task scenarios involving 3, 
 
 2. Rename the target 'main-x.py' in [src](src), e.g., [main-3.py](main-3.py), [main-4.py](main-4.py), [main-5.py](main-5.py), as 'main.py'.
 
-### Recommend Hyper-parameters on each dataset
+### Recommended hyper-parameters on each dataset
 
 |Parameter Name|Raw DEAP|Preprocessed DEAP|WESAD|Raw MOCAS|Preprocessed MOCAS|Cogload|
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |

@@ -21,7 +21,7 @@ def initiate(hyp_params, train_loader, valid_loader, test_loader):
         model = model.cuda()
 
     optimizer = getattr(optim, hyp_params.optim)(model.parameters(), lr=hyp_params.lr)
-    criterion = getattr(nn, hyp_params.criterion)()
+    criterion = focalloss()
     scheduler = ReduceLROnPlateau(optimizer, mode='min', patience=hyp_params.when, factor=0.1, verbose=True)
     settings = {'model': model,
                 'optimizer': optimizer,

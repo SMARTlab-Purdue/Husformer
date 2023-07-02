@@ -68,7 +68,7 @@ We provide 3 model files which are corresponding to task scenarios involving 3, 
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 |Batch Size|1024|1024|512|64|128|1024|
 |Initial Learning Rate|2e-3|2e-3|1e-3|1e-3|1e-3|1e-3|
-|Optimizer|Adam|Adam|Adam|Adam|Adam|Adam|
+|Optimizer|SGD|SGD|Adam|Adam|Adam|Adam|
 |Transformer Hidden Unit Size|40|40|40|40|40|40|
 |Crossmodal Attention Heads|3|3|3|5|5|3|
 |Crossmodal Attention Block Dropout|0.1|0.1|0.05|0.05|0.05|0.1|

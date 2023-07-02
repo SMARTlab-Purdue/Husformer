@@ -7,7 +7,7 @@ def eval(hyp_params, test_loader):
     model.eval()
     loader = test_loader 
     total_loss = 0.0
-    criterion = getattr(nn, hyp_params.criterion)()
+    criterion = focalloss()
     results = []
     truths = []
     with torch.no_grad():

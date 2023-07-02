@@ -68,14 +68,14 @@ We provide 3 model files which are corresponding to task scenarios involving 3, 
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 |Batch Size|1024|1024|512|64|128|1024|
 |Initial Learning Rate|2e-3|2e-3|1e-3|1e-3|1e-3|1e-3|
-|Optimizer|SGD|SGD|Adam|Adam|Adam|Adam|
+|Optimizer|SGD|SGD|SGD|SGD|SGD|SGD|
 |Transformer Hidden Unit Size|40|40|40|40|40|40|
 |Crossmodal Attention Heads|3|3|3|5|5|3|
 |Crossmodal Attention Block Dropout|0.1|0.1|0.05|0.05|0.05|0.1|
 |Output Dropout|0.1|0.1|0.1|0.1|0.1|0.1|
 |Focal Loss $\alpha_c$|[0.1,0.1,0.8]|[0.15,0.05,0.8]|[0.4,0.3,0.3]|[0.2,0.1,0.7]|[0.15,0.15,0.7]|[0.1,0.1,0.8]|
 |Focal Loss $\gamma$|3|3|2|3|3|2|
-|Epochs|20|20|60|40|40|80|
+|Epochs|120|120|80|100|100|120|
 
 ### Run the code
 
